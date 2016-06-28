@@ -19,4 +19,9 @@
     (are [given-board expected-board]
       (= (right given-board) expected-board)
       [[0 nil] [0 0]] [[nil 0] [0 0]]
-      [[0 0] [0 nil]] [[0 0] [nil 0]])))
+      [[0 0] [0 nil]] [[0 0] [nil 0]]))
+  (testing "move right a right most tile leaves board as is"
+    (are [board]
+      (= (right board) board)
+      [[nil 0] [0 0]]
+      [[0 0] [nil 0]])))

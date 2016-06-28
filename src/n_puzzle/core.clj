@@ -11,7 +11,9 @@
 (defn- move [delta board]
   (let [hole (hole board)
         tile (delta hole)]
-    (swap board hole tile)))
+    (if (get-in board tile)
+      (swap board hole tile)
+      board)))
 
 (defn board [n] (partition n n [nil] (range 1 (* n n))))
 
