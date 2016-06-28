@@ -1,6 +1,3 @@
 (ns n-puzzle.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn board [n] (partition n n [nil] (range 1 (* n n))))
