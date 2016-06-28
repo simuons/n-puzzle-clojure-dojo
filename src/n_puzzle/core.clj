@@ -8,8 +8,11 @@
 (defn- hole [board]
   (first (filter #(<= 0 (last %)) (map-indexed #(vector %1 (.indexOf %2 nil)) board))))
 
+(defn- move [delta board]
+  (let [hole (hole board)
+        tile (delta hole)]
+    (swap board hole tile)))
+
 (defn board [n] (partition n n [nil] (range 1 (* n n))))
 
-(defn right [board]
-  (let [[x y :as hole] (hole board)]
-    (swap board hole [x (- y 1)])))
+(def right (partial move #(update % 1 dec)))
