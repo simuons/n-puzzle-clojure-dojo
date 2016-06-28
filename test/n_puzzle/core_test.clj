@@ -32,4 +32,12 @@
   (testing "move left a left most tile leaves board as is"
     (are [board]
       (= (left board) board)
-      [[0 nil] [0 0]])))
+      [[0 nil] [0 0]]))
+  (testing "move up to empty slot"
+    (are [given-board expected-board]
+      (= (up given-board) expected-board)
+      [[nil 0] [0 0]] [[0 0] [nil 0]]))
+  (testing "move up an up most tile leaves board as is"
+    (are [board]
+      (= (up board) board)
+      [[0 0] [nil 0]])))

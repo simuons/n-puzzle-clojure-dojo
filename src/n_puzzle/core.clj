@@ -20,3 +20,5 @@
 (def right (partial move #(update % 1 dec)))
 
 (def left (partial move #(update % 1 inc)))
+
+(def up (partial move #(update % 0 inc)))
