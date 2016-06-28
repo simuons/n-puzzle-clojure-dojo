@@ -13,3 +13,10 @@
       3 [[1 2 3]
          [4 5 6]
          [7 8 nil]])))
+
+(deftest moves-test
+  (testing "move right to empty slot"
+    (are [given-board expected-board]
+      (= (right given-board) expected-board)
+      [[0 nil] [0 0]] [[nil 0] [0 0]]
+      [[0 0] [0 nil]] [[0 0] [nil 0]])))
