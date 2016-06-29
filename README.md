@@ -8,3 +8,7 @@ The n-puzzle is a board game for a single player. It consists of (n^2 - 1) numbe
 * Fork this repository
 * Checkout master branch
 * Run `lein test-refresh` from project root
+
+# Solution
+
+One of many possible can be found in [this branch](https://github.com/simuons/n-puzzle-clojure-dojo/tree/solution)
