@@ -15,7 +15,7 @@
       (swap board hole tile)
       board)))
 
-(defn board [n] (partition n n [nil] (range 1 (* n n))))
+(defn board [n] (vec (map vec (partition n n [nil] (range 1 (* n n))))))
 
 (def right (partial move #(update % 1 dec)))
 

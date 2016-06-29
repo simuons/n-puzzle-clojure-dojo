@@ -49,3 +49,7 @@
     (are [board]
       (= (down board) board)
       [[nil 0] [0 0]])))
+
+(deftest play-test
+  (testing "apply sequence of moves on the board"
+    (is (= (-> (board 2) right down left up) [[2 3] [1 nil]]))))
