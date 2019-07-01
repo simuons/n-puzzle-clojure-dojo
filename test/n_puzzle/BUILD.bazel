@@ -1,0 +1,7 @@
+load("@rules_clojure//:rules.bzl", "clojure_test")
+
+clojure_test(
+    name = "test",
+    srcs = ["core_test.clj"],
+    deps = ["//src/n_puzzle"]
+)

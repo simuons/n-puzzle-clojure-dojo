@@ -1,0 +1,15 @@
+load("@rules_clojure//:rules.bzl", "clojure_library")
+
+clojure_library(
+    name = "n_puzzle",
+    srcs = ["core.clj", "ui.clj"],
+    aots = ["n-puzzle.ui"],
+    visibility = ["//visibility:public"]
+)
+
+java_binary(
+    name = "ui",
+    main_class = "n_puzzle.ui",
+    runtime_deps = [":n_puzzle"],
+    visibility = ["//visibility:public"]
+)
